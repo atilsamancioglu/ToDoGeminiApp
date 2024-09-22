@@ -18,3 +18,4 @@ google-generativeai==0.7.2
 langchain-google-genai==1.0.10
 markdown==3.7
 bs4==0.0.2
+alembic==1.13.2
