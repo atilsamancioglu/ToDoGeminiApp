@@ -18,7 +18,7 @@ router = APIRouter(
 )
 
 script_dir = os.path.dirname(__file__)
-templates_abs_file_path = os.path.join(script_dir, ".templates/")
+templates_abs_file_path = os.path.join(script_dir, "templates/")
 
 templates = Jinja2Templates(directory=templates_abs_file_path)
 
@@ -86,7 +86,7 @@ async def get_current_user(token: Annotated[str, Depends(oauth2_bearer)]):
 
 @router.get("/login-page")
 def render_login_page(request: Request):
-    return templates.TemplateResponse("login.html", {"request": request})
+    return templates.TemplateResponse(f"{templates_abs_file_path}login.html", {"request": request})
 
 
 @router.get("/register-page")
