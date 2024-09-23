@@ -9,7 +9,7 @@ from .routers.todo import router as todo_router
 
 app = FastAPI()
 
-app.mount("/static", StaticFiles(directory="static"), name="static")
+app.mount("/static", StaticFiles(directory=".static"), name="static")
 
 
 @app.get("/")

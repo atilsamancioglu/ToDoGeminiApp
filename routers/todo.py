@@ -21,7 +21,7 @@ router = APIRouter(
     tags=["Todo"],
 )
 
-templates = Jinja2Templates(directory="templates")
+templates = Jinja2Templates(directory=".templates")
 
 
 class TodoRequest(BaseModel):
