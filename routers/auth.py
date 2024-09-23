@@ -10,13 +10,17 @@ from passlib.context import CryptContext
 from jose import jwt, JWTError
 from datetime import timedelta, datetime, timezone
 from fastapi.templating import Jinja2Templates
+import os
 
 router = APIRouter(
     prefix="/auth",
     tags=["Authentication"],
 )
 
-templates = Jinja2Templates(directory=".templates")
+script_dir = os.path.dirname(__file__)
+templates_abs_file_path = os.path.join(script_dir, "templates/")
+
+templates = Jinja2Templates(directory=templates_abs_file_path)
 
 SECRET_KEY = "acoztm3revp1vfj7ld5sz2ndg5xp79r9fnr2p4hx2dy63h6a8efhj6rm54u8evh8"
 ALGORITHM = "HS256"
