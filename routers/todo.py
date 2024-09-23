@@ -21,7 +21,7 @@ router = APIRouter(
     tags=["Todo"],
 )
 script_dir = os.path.dirname(__file__)
-templates_abs_file_path = os.path.join(script_dir, "./templates/")
+templates_abs_file_path = os.path.join(script_dir, "/../templates/")
 
 templates = Jinja2Templates(directory=templates_abs_file_path)
 
