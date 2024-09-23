@@ -15,14 +15,12 @@ from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_core.messages import HumanMessage, AIMessage
 import markdown
 from bs4 import BeautifulSoup
+from ..main import templates_abs_file_path
 
 router = APIRouter(
     prefix="/todo",
     tags=["Todo"],
 )
-
-script_dir = os.path.dirname(__file__)
-templates_abs_file_path = os.path.join(script_dir, "templates/")
 
 templates = Jinja2Templates(directory=templates_abs_file_path)
 
