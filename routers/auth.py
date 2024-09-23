@@ -85,7 +85,7 @@ async def get_current_user(token: Annotated[str, Depends(oauth2_bearer)]):
 
 @router.get("/login-page")
 def render_login_page(request: Request):
-    return templates.TemplateResponse("templates/login.html", {"request": request})
+    return templates.TemplateResponse("/templates/login.html", {"request": request})
 
 
 @router.get("/register-page")
