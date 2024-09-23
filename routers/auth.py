@@ -16,10 +16,10 @@ router = APIRouter(
     prefix="/auth",
     tags=["Authentication"],
 )
-script_dir = os.path.dirname(__file__)
-templates_abs_file_path = os.path.join(script_dir, "/../templates/")
+#script_dir = os.path.dirname(__file__)
+#templates_abs_file_path = os.path.join(script_dir, "templates/")
 
-templates = Jinja2Templates(directory=templates_abs_file_path)
+templates = Jinja2Templates(directory="/../templates/")
 
 SECRET_KEY = "acoztm3revp1vfj7ld5sz2ndg5xp79r9fnr2p4hx2dy63h6a8efhj6rm54u8evh8"
 ALGORITHM = "HS256"
@@ -85,7 +85,7 @@ async def get_current_user(token: Annotated[str, Depends(oauth2_bearer)]):
 
 @router.get("/login-page")
 def render_login_page(request: Request):
-    return templates.TemplateResponse(f"{templates_abs_file_path}login.html", {"request": request})
+    return templates.TemplateResponse("templates/login.html", {"request": request})
 
 
 @router.get("/register-page")
